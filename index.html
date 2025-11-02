@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#3d2b1f" />
     <meta name="title" content="Vagabonds" />
     <meta name="description" content="AfrikaBurn and Borderland Theme Camp" />
     <meta name="author" content="Vagabonds" />
     <meta name="robots" content="index, follow" />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vagabonds.camp/" />
     <meta property="og:title" content="Vagabonds" />
     <meta property="og:description" content="AfrikaBurn and Borderland Theme Camp" />
     <meta property="og:image" content="https://vagabonds.camp/og-image.jpg" />
+
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://vagabonds.camp/" />
     <meta property="twitter:title" content="Vagabonds" />
@@ -21,8 +22,24 @@
     <meta property="twitter:image" content="https://vagabonds.camp/og-image.jpg" />
 
     <link rel="icon" href="/favicon.ico" />
-
     <title>Vagabonds</title>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vagabonds",
+    "url": "https://vagabonds.camp/",
+    "logo": "https://vagabonds.camp/og-image.jpg",
+    "description": "The Vagabonds is a growing international collective of burners who have organised theme camps at AfrikaBurn since 2019 and Borderland since 2022.",
+    "foundingDate": "2019",
+    "sameAs": [
+      "https://instagram.com/vagabondsburn",
+      "mailto:burn@vagabonds.camp"
+    ]
+  }
+  </script>
 
     <style>
         :root {
@@ -41,34 +58,36 @@
             animation: drift 15s ease-in-out infinite alternate;
             color: var(--text-light);
             margin: 0;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem 1.5rem;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
             color: var(--accent-light);
         }
 
-        .description {
+        main {
             max-width: 700px;
-            font-size: 1rem;
+            padding: 0 1.5rem;
+        }
+
+        p {
             line-height: 1.6;
-            color: var(--text-muted);
+            color: var(--text-light);
             margin-bottom: 2rem;
         }
 
         a {
-            display: block;
-            margin: 0.5rem 0;
+            display: inline-block;
+            margin: 0.5rem 0.5rem;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             color: var(--accent-light);
@@ -76,38 +95,19 @@
             border-radius: 9999px;
             background-color: rgba(255, 255, 255, 0.02);
             transition: all 0.2s ease;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
         }
 
-        a:nth-of-type(1) {
-            animation-delay: 0.2s;
-        }
-
-        a:nth-of-type(2) {
-            animation-delay: 0.4s;
-        }
-
-        a:nth-of-type(3) {
-            animation-delay: 0.6s;
-        }
-
-        a:nth-of-type(4) {
-            animation-delay: 0.8s;
-        }
-
-        a:nth-of-type(5) {
-            animation-delay: 1s;
-        }
-
-        a:hover {
+        a:hover,
+        a:focus {
             background-color: var(--accent);
             color: var(--bg-dark);
             border-color: var(--accent);
+            outline: none;
         }
 
         footer {
-            margin-top: 2rem;
+            position: absolute;
+            bottom: 1rem;
             font-size: 0.8rem;
             color: var(--text-muted);
         }
@@ -121,22 +121,9 @@
                 background-position: 100% 50%;
             }
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 
     <script>
-        // Define redirects
         const redirects = {
             "recruitment": "https://docs.google.com/forms/d/e/1FAIpQLSezxW_VNHHOIP80idJLd84kQbJtk38RXSxIRDqVOD91ZlkcYw/viewform?usp=dialog",
             "form": "https://docs.google.com/forms/d/e/1FAIpQLSconjRGMezgXEtFOfFOhSJ8NZYrVDTpj-hgDWX16s7iiC7pbQ/viewform?usp=dialog",
@@ -145,65 +132,47 @@
             "contact": "mailto:burn@vagabonds.camp"
         };
 
-        // Determine the path (strip leading/trailing slashes)
         const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
-
         const target = redirects[path];
-
-        if (target) {
-            // Use replace() so the redirect doesn’t stay in browser history
-            window.location.replace(target);
-        }
+        if (target) window.location.replace(target);
     </script>
 </head>
 
 <body>
-    <h1>Vagabonds</h1>
+    <header role="banner">
+        <h1 id="camp-title">Vagabonds</h1>
+        <p id="camp-tagline" aria-label="Camp slogan">AfrikaBurn 2026 🌈</p>
+    </header>
 
-    <div class="description">
+    <main id="main-content" role="main" aria-labelledby="camp-title">
         <p>
             The Vagabonds is a growing international collective of burners who have organised theme camps at AfrikaBurn
-            since 2019 and Borderland since 2022.
-            In the default world, we are a diverse group of travelers, entrepreneurs, nomads, free spirits, creatives,
-            and dreamers.
+            since 2019 and Borderland since 2022. In the default world, we are a diverse group of travelers,
+            entrepreneurs, nomads, free spirits, creatives, and dreamers.
         </p>
         <p>
             Initially inspired by the aesthetics of Swedish artist Simon Stålenhag and his Vagabond robots, this once
-            Nordic-centric community has since grown
-            to over 200 members who come to meet from all corners of the world to connect, co-create and co-live.
+            Nordic-centric community has since grown to over 200 members who come to meet from all corners of the world
+            to connect, co-create and co-live.
         </p>
         <p>
             We gather in the dust and dirt to celebrate life beyond the edges of civilization; to recharge our
             batteries, sweat out our inner demons and dance like the universe is watching.
         </p>
-    </div>
 
-    <strong>AfrikaBurn 2026 🌈</strong>
+        <nav aria-label="Main navigation">
+            <a href="https://vagabonds.camp/recruitment" target="_blank" aria-label="Recruitment Form">Recruitment
+                Form</a>
+            <a href="https://vagabonds.camp/form" target="_blank"
+                aria-label="Returning Vagabonds Registration Form">Registration Form</a>
+            <a href="https://vagabonds.camp/guide" target="_blank" aria-label="Camp Guide">Camp Guide</a>
+            <a href="https://instagram.com/vagabondsburn" target="_blank" aria-label="Vagabonds Instagram">Instagram</a>
+            <a href="mailto:burn@vagabonds.camp" aria-label="Contact us by email">Contact Us</a>
+        </nav>
+    </main>
 
-    <a href="https://vagabonds.camp/recruitment" target="_blank">
-        Recruitment Form
-    </a>
-
-    <a href="https://vagabonds.camp/form" target="_blank">
-        Registration Form for returning Vagabonds
-    </a>
-
-    <a href="https://vagabonds.camp/guide" target="_blank">
-        Camp Guide
-    </a>
-
-    <a href="https://instagram.com/vagabondsburn" target="_blank">
-        Instagram
-    </a>
-
-    <a href="mailto:burn@vagabonds.camp">
-        Contact Us
-    </a>
-
-    <footer>
-        <small>
-            Last Update: 2025-11-02
-        </small>
+    <footer role="contentinfo">
+        <small>Last Update: 2025-11-02</small>
     </footer>
 </body>
 
