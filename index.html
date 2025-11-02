@@ -86,7 +86,12 @@
             margin-bottom: 2rem;
         }
 
-        a {
+        a.inline {
+            text-decoration: none;
+            color: var(--accent-light);
+        }
+
+        a.button {
             display: block;
             margin: 0.5rem 0;
             padding: 0.75rem 1.5rem;
@@ -98,8 +103,8 @@
             transition: all 0.2s ease;
         }
 
-        a:hover,
-        a:focus {
+        a.button:hover,
+        a.button:focus {
             background-color: var(--accent);
             color: var(--bg-dark);
             border-color: var(--accent);
@@ -162,12 +167,19 @@
 
     <main id="main-content" role="main" aria-labelledby="camp-title">
         <p>
-            The Vagabonds is a growing international collective of burners who have organised theme camps at AfrikaBurn
-            since 2019 and Borderland since 2022. In the default world, we are a diverse group of travelers,
+            The Vagabonds is a growing international collective of burners who have organised theme camps at <a
+                class="inline" href="https://afrikaburn.org" target="_blank"
+                aria-label="AfrikaBurn website">AfrikaBurn</a>
+            since 2019 and <a class="inline" href="https://theborderland.se" target="_blank"
+                aria-label="Borderland website">Borderland</a>. since 2022. In the default world, we are a
+            diverse group of travelers,
             entrepreneurs, nomads, free spirits, creatives, and dreamers.
         </p>
         <p>
-            Initially inspired by the aesthetics of Swedish artist Simon Stålenhag and his Vagabond robots, this once
+            Initially inspired by the aesthetics of Swedish artist <a class="inline"
+                href="https://www.simonstalenhag.se/" target="_blank" aria-label="Website of Simon Stålenhag">Simon
+                Stålenhag</a> and his Vagabond robots,
+            this once
             Nordic-centric community has since grown to over 200 members who come to meet from all corners of the world
             to connect, co-create and co-live.
         </p>
@@ -179,11 +191,13 @@
         <p id="camp-tagline" aria-label="Camp slogan"><strong>AfrikaBurn 2026 🌈</strong></p>
 
         <nav aria-label="Main navigation">
-            <a href="https://vagabonds.camp/recruitment" target="_blank" aria-label="Recruitment Form">Recruitment
+            <a class="button" href="https://vagabonds.camp/recruitment" target="_blank"
+                aria-label="Recruitment Form">Recruitment
                 Form</a>
-            <a href="https://vagabonds.camp/guide" target="_blank" aria-label="Camp Guide">Camp Guide</a>
-            <a href="https://instagram.com/vagabondsburn" target="_blank" aria-label="Vagabonds Instagram">Instagram</a>
-            <a href="mailto:burn@vagabonds.camp" aria-label="Contact us by email">Contact Us</a>
+            <a class="button" href="https://vagabonds.camp/guide" target="_blank" aria-label="Camp Guide">Camp Guide</a>
+            <a class="button" href="https://instagram.com/vagabondsburn" target="_blank"
+                aria-label="Vagabonds Instagram">Instagram</a>
+            <a class="button" href="mailto:burn@vagabonds.camp" aria-label="Contact us by email">Contact Us</a>
         </nav>
     </main>
 
