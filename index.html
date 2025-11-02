@@ -57,13 +57,15 @@
             animation: drift 15s ease-in-out infinite alternate;
             color: var(--text-light);
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
+            /* allow content taller than viewport */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            overflow: hidden;
+            padding: 2rem 1.5rem;
+            overflow-x: hidden;
+            /* only hide horizontal overflow */
         }
 
         h1 {
@@ -85,8 +87,8 @@
         }
 
         a {
-            display: inline-block;
-            margin: 0.5rem 0.5rem;
+            display: block;
+            margin: 0.5rem 0;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             color: var(--accent-light);
@@ -110,6 +112,13 @@
             font-size: 0.8rem;
             color: var(--text-muted);
         }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
 
         @keyframes drift {
             0% {
@@ -140,7 +149,6 @@
 <body>
     <header role="banner">
         <h1 id="camp-title">Vagabonds</h1>
-        <p id="camp-tagline" aria-label="Camp slogan">AfrikaBurn 2026 🌈</p>
     </header>
 
     <main id="main-content" role="main" aria-labelledby="camp-title">
@@ -158,6 +166,8 @@
             We gather in the dust and dirt to celebrate life beyond the edges of civilization; to recharge our
             batteries, sweat out our inner demons and dance like the universe is watching.
         </p>
+
+        <p id="camp-tagline" aria-label="Camp slogan"><strong>AfrikaBurn 2026 🌈</strong></p>
 
         <nav aria-label="Main navigation">
             <a href="https://vagabonds.camp/recruitment" target="_blank" aria-label="Recruitment Form">Recruitment
