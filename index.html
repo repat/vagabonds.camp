@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3d2b1f" />
     <meta name="title" content="Vagabonds" />
     <meta name="description" content="AfrikaBurn and Borderland Theme Camp" />
     <meta name="author" content="Vagabonds" />
@@ -26,10 +27,8 @@
     <style>
         :root {
             --bg-dark: #2b1d16;
-            /* deep earth brown */
             --bg-light: #3d2b1f;
             --accent: #d6b98c;
-            /* sandy beige */
             --accent-light: #e7cfaa;
             --text-light: #f4efe8;
             --text-muted: #bfa88c;
@@ -37,23 +36,34 @@
 
         body {
             font-family: "Inter", system-ui, sans-serif;
-            background: radial-gradient(circle at 50% 50%, var(--bg-light), var(--bg-dark));
+            background: linear-gradient(120deg, var(--bg-dark), var(--bg-light), var(--bg-dark));
+            background-size: 200% 200%;
+            animation: drift 15s ease-in-out infinite alternate;
             color: var(--text-light);
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden;
+            padding: 2rem 1.5rem;
+            overflow-x: hidden;
         }
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             letter-spacing: 0.05em;
             color: var(--accent-light);
+        }
+
+        .description {
+            max-width: 700px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
         a {
@@ -66,6 +76,28 @@
             border-radius: 9999px;
             background-color: rgba(255, 255, 255, 0.02);
             transition: all 0.2s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        a:nth-of-type(1) {
+            animation-delay: 0.2s;
+        }
+
+        a:nth-of-type(2) {
+            animation-delay: 0.4s;
+        }
+
+        a:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
+
+        a:nth-of-type(4) {
+            animation-delay: 0.8s;
+        }
+
+        a:nth-of-type(5) {
+            animation-delay: 1s;
         }
 
         a:hover {
@@ -75,13 +107,11 @@
         }
 
         footer {
-            position: absolute;
-            bottom: 1rem;
+            margin-top: 2rem;
             font-size: 0.8rem;
             color: var(--text-muted);
         }
 
-        /* Subtle sand drift animation for warmth */
         @keyframes drift {
             0% {
                 background-position: 0% 50%;
@@ -92,10 +122,16 @@
             }
         }
 
-        body {
-            background: linear-gradient(120deg, var(--bg-dark), var(--bg-light), var(--bg-dark));
-            background-size: 200% 200%;
-            animation: drift 15s ease-in-out infinite alternate;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 
@@ -123,6 +159,24 @@
 
 <body>
     <h1>Vagabonds</h1>
+
+    <div class="description">
+        <p>
+            The Vagabonds is a growing international collective of burners who have organised theme camps at AfrikaBurn
+            since 2019 and Borderland since 2022.
+            In the default world, we are a diverse group of travelers, entrepreneurs, nomads, free spirits, creatives,
+            and dreamers.
+        </p>
+        <p>
+            Initially inspired by the aesthetics of Swedish artist Simon Stålenhag and his Vagabond robots, this once
+            Nordic-centric community has since grown
+            to over 200 members who come to meet from all corners of the world to connect, co-create and co-live.
+        </p>
+        <p>
+            We gather in the dust and dirt to celebrate life beyond the edges of civilization; to recharge our
+            batteries, sweat out our inner demons and dance like the universe is watching.
+        </p>
+    </div>
 
     <strong>AfrikaBurn 2026 🌈</strong>
 
