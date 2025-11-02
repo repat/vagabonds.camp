@@ -1,6 +1,6 @@
 # vagabonds.camp
 
-Website with links for the Vagabonds Theme Camp at AfrikaBurn 2026, reachable under [https://vagabonds.camp](https://vagabonds.camp)
+Website with links for the Vagabonds Theme Camp at AfrikaBurn 2026, reachable under [https://vagabonds.camp](https://vagabonds.camp).
 
 ## Links
 
