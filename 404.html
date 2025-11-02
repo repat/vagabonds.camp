@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+        // Define redirects
+        const redirects = {
+            "recruitment": "https://docs.google.com/forms/d/e/1FAIpQLSezxW_VNHHOIP80idJLd84kQbJtk38RXSxIRDqVOD91ZlkcYw/viewform?usp=dialog",
+            "form": "https://docs.google.com/forms/d/e/1FAIpQLSconjRGMezgXEtFOfFOhSJ8NZYrVDTpj-hgDWX16s7iiC7pbQ/viewform?usp=dialog",
+            "guide": "https://drive.google.com/file/d/1UoWUP8Pxc_KNqBIgiPqdzcdRXrmqVG7r/view",
+            "instagram": "https://instagram.com/vagabondsburn",
+            "contact": "mailto:burn@vagabonds.camp"
+        };
+
+        // Determine the path (strip leading/trailing slashes)
+        const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+
+        const target = redirects[path];
+
+        if (target) {
+            // Use replace() so the redirect doesn’t stay in browser history
+            window.location.replace(target);
+        } else {
+            // Optional: fallback if no match
+            document.addEventListener("DOMContentLoaded", () => {
+                document.body.innerHTML = `
+            <h1>404 – Page Not Found</h1>
+            <p>No redirect found for <code>/${path}</code>.</p>
+          `;
+            });
+        }
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=https://github.com/repat/vagabonds.camp">
+    </noscript>
+</head>
+
+<body></body>
+
+</html>
