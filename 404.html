@@ -29,6 +29,10 @@
                 document.body.innerHTML = `
             <h1>404 – Page Not Found</h1>
             <p>No redirect found for <code>/${path}</code>.</p>
+            <p>These are the possible redirects:</p>
+            <ul>
+              ${Object.keys(redirects).map((key) => `<li><code>/${key}</code></li>`).join("")}
+            </ul>
           `;
             });
         }
