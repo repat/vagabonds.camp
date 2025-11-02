@@ -4,7 +4,101 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vagabonds Theme Camp @ AfrikaBurn</title>
+    <meta name="title" content="Vagabonds" />
+    <meta name="description" content="AfrikaBurn and Borderland Theme Camp" />
+    <meta name="author" content="Vagabonds" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vagabonds.camp/" />
+    <meta property="og:title" content="Vagabonds" />
+    <meta property="og:description" content="AfrikaBurn and Borderland Theme Camp" />
+    <meta property="og:image" content="https://vagabonds.camp/og-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vagabonds.camp/" />
+    <meta property="twitter:title" content="Vagabonds" />
+    <meta property="twitter:description" content="AfrikaBurn and Borderland Theme Camp" />
+    <meta property="twitter:image" content="https://vagabonds.camp/og-image.jpg" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>Vagabonds</title>
+
+    <style>
+        :root {
+            --bg-dark: #2b1d16;
+            /* deep earth brown */
+            --bg-light: #3d2b1f;
+            --accent: #d6b98c;
+            /* sandy beige */
+            --accent-light: #e7cfaa;
+            --text-light: #f4efe8;
+            --text-muted: #bfa88c;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background: radial-gradient(circle at 50% 50%, var(--bg-light), var(--bg-dark));
+            color: var(--text-light);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            color: var(--accent-light);
+        }
+
+        a {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--accent-light);
+            border: 1px solid var(--accent);
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            background-color: var(--accent);
+            color: var(--bg-dark);
+            border-color: var(--accent);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Subtle sand drift animation for warmth */
+        @keyframes drift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        body {
+            background: linear-gradient(120deg, var(--bg-dark), var(--bg-light), var(--bg-dark));
+            background-size: 200% 200%;
+            animation: drift 15s ease-in-out infinite alternate;
+        }
+    </style>
+
     <script>
         // Define redirects
         const redirects = {
@@ -23,25 +117,40 @@
         if (target) {
             // Use replace() so the redirect doesn’t stay in browser history
             window.location.replace(target);
-        } else {
-            // Optional: fallback if no match
-            document.addEventListener("DOMContentLoaded", () => {
-                document.body.innerHTML = `
-            <h1>404 – Page Not Found</h1>
-            <p>No redirect found for <code>/${path}</code>.</p>
-            <p>These are the possible redirects:</p>
-            <ul>
-              ${Object.keys(redirects).map((key) => `<li><code>/${key}</code></li>`).join("")}
-            </ul>
-          `;
-            });
         }
     </script>
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=https://github.com/repat/vagabonds.camp">
-    </noscript>
 </head>
 
-<body></body>
+<body>
+    <h1>Vagabonds</h1>
+
+    <strong>AfrikaBurn 2026 🌈</strong>
+
+    <a href="https://vagabonds.camp/recruitment" target="_blank">
+        Recruitment Form
+    </a>
+
+    <a href="https://vagabonds.camp/form" target="_blank">
+        Registration Form for returning Vagabonds
+    </a>
+
+    <a href="https://vagabonds.camp/guide" target="_blank">
+        Camp Guide
+    </a>
+
+    <a href="https://instagram.com/vagabondsburn" target="_blank">
+        Instagram
+    </a>
+
+    <a href="mailto:burn@vagabonds.camp">
+        Contact Us
+    </a>
+
+    <footer>
+        <small>
+            Last Update: 2025-11-02
+        </small>
+    </footer>
+</body>
 
 </html>
