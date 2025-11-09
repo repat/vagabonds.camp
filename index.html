@@ -62,14 +62,12 @@
             color: var(--text-light);
             margin: 0;
             min-height: 100vh;
-            /* allow content taller than viewport */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             padding: 2rem 1.5rem;
             overflow-x: hidden;
-            /* only hide horizontal overflow */
         }
 
         h1 {
@@ -116,14 +114,27 @@
         }
 
         footer {
-            font-size: 0.8rem;
-            color: var(--text-muted);
             font-size: 0.9rem;
             color: var(--text-light);
             opacity: 0.7;
             margin-top: 2rem;
             padding-bottom: 1.5rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            text-decoration: underline;
+            color: var(--accent);
         }
 
         nav {
@@ -171,42 +182,48 @@
 
     <main id="main-content" role="main" aria-labelledby="camp-title">
         <p>
-            The Vagabonds is a growing international collective of burners who have organised theme camps at <a
-                class="inline" href="https://afrikaburn.org" target="_blank"
+            The Vagabonds is a growing international collective of burners who have organised theme camps at
+            <a class="inline" href="https://afrikaburn.org" target="_blank"
                 aria-label="AfrikaBurn website">AfrikaBurn</a>
-            since 2019 and <a class="inline" href="https://theborderland.se" target="_blank"
-                aria-label="Borderland website">Borderland</a> since 2022. In the default world, we are a
-            diverse group of travelers,
-            entrepreneurs, nomads, free spirits, creatives, and dreamers.
-        </p>
-        <p>
-            Initially inspired by the aesthetics of Swedish artist <a class="inline"
-                href="https://www.simonstalenhag.se/" target="_blank" aria-label="Website of Simon Stålenhag">Simon
-                Stålenhag</a> and his Vagabond robots,
-            this once
-            Nordic-centric community has since grown to over 200 members who come to meet from all corners of the world
-            to connect, co-create and co-live.
-        </p>
-        <p>
-            We gather in the dust and dirt to celebrate life beyond the edges of civilization; to recharge our
-            batteries, sweat out our inner demons and dance like the universe is watching.
+            since 2019 and
+            <a class="inline" href="https://theborderland.se" target="_blank"
+                aria-label="Borderland website">Borderland</a>
+            since 2022. In the default world, we are a diverse group of travelers, entrepreneurs, nomads, free spirits,
+            creatives, and dreamers.
         </p>
 
-        <p id="camp-tagline" aria-label="Camp slogan"><strong>AfrikaBurn 2026 🌈</strong></p>
+        <p>
+            Initially inspired by the aesthetics of Swedish artist
+            <a class="inline" href="https://www.simonstalenhag.se/" target="_blank"
+                aria-label="Website of Simon Stålenhag">Simon Stålenhag</a> and his Vagabond robots, this once
+            Nordic-centric
+            community has since grown to over 200 members who come to meet from all corners of the world to connect,
+            co-create and co-live.
+        </p>
+
+        <p>
+            We gather in the dust and dirt to celebrate life beyond the edges of civilization; to recharge our
+            batteries, sweat
+            out our inner demons and dance like the universe is watching.
+        </p>
+
+        <p id="camp-tagline" aria-label="Camp slogan"><strong>AfrikaBurn 2026</strong></p>
 
         <nav aria-label="Main navigation">
             <a class="button" href="https://vagabonds.camp/recruitment" target="_blank"
-                aria-label="Recruitment Form">Recruitment
-                Form</a>
+                aria-label="Recruitment Form">Recruitment Form</a>
             <a class="button" href="https://vagabonds.camp/guide" target="_blank" aria-label="Camp Guide">Camp Guide</a>
-            <a class="button" href="https://instagram.com/vagabondsburn" target="_blank"
-                aria-label="Vagabonds Instagram">Instagram</a>
-            <a class="button" href="mailto:burn@vagabonds.camp" aria-label="Contact us by email">Contact Us</a>
         </nav>
     </main>
 
     <footer role="contentinfo">
-        <small>Last Update: 2025-11-02</small>
+        <small>
+            <a href="https://instagram.com/vagabondsburn" target="_blank" aria-label="Vagabonds Instagram">Instagram</a>
+            |
+            <a href="mailto:burn@vagabonds.camp" aria-label="Contact us by email">Contact Us</a>
+            <br />
+            Last Update: 2025-11-09
+        </small>
     </footer>
 </body>
 
